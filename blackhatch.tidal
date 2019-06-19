@@ -1,0 +1,48 @@
+d1
+$ euclid 3 8
+$ sound "bd"
+|> gain 1.2
+|> hpf 1000
+|> pan (rand)
+
+d1 silence
+
+-- fun bass pattern
+d2
+$ euclid 2 11
+$ sound "bd"
+|> gain 1.0
+|> crush 4
+
+d2 silence
+
+-- simple bass pattern
+d3
+-- $ euclid 1 8
+$ sound "silence bd"
+|> gain 1.0
+|> crush 4
+
+d3 silence
+
+-- some arpeggiating
+d4
+$ sound "bd*5 blip*3"
+|> hpf 500
+|> lpf 3000
+|> speed (range 1 8 $ tri)
+|> gain 0.9
+|> crush 4
+|> pan (rand)
+
+d4 silence
+
+-- snare to go with d3
+d5
+$ sound "sn:1 sn:4 sn:7"
+|> gain 0.9
+|> crush 3
+
+d5 silence
+
+hush
