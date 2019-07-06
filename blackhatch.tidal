@@ -19,7 +19,7 @@ d2 silence
 -- simple bass pattern
 d3
 -- $ euclid 1 8
-$ sound "silence bd"
+$ sound "silence bd silence bd"
 |> gain 1.0
 |> crush 4
 

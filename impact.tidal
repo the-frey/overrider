@@ -1,0 +1,68 @@
+d1
+$ euclid 3 8
+$ sound "bd"
+|> gain 1.2
+|> crush 5
+
+d2
+$ sound "sn:4"
+|> gain 0.9
+|> crush 3
+
+d2 silence
+
+d3
+$ sound "sn:7"
+|> gain 1.2
+|> hpf 1000
+-- |> pan (rand)
+
+d3 silence
+
+d4
+$ randslice 128
+$ euclid 2 8
+$ sound "bev:2 bev:1 bev:1"
+|> gain 1.1
+|> hpf 1000
+|> pan (rand)
+
+d4 silence
+
+d5
+$ randslice 32
+$ euclid 2 8
+$ sound "bev:2 bev:1"
+|> gain 1.1
+|> hpf 1000
+|> pan (rand)
+|> crush 5
+
+d5 silence
+
+d6
+$ randslice 64
+$ euclid 5 16
+$ sound "bev*3"
+|> gain 0.9
+|> pan (rand)
+|> crush 2
+
+d7
+$ randslice 16
+$ sound "ade"
+|> pan (rand)
+|> gain 0.6
+|> crush 3
+
+d8
+$ brak
+$ sound "bd:6 bd:1 sn:7 bd:2 sn:7"
+|> gain 1.2
+|> crush 5
+
+d8 silence
+
+hush
+
+-- start with d7, then d4, then kick d1, then d5, d6 and snare d3 last
